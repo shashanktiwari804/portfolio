@@ -4,7 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Rajath Nair | Python Automation Developer',
+  title: 'Shashank Tiwari | Python Automation Developer',
   description: 'Portfolio of a Python Automation Developer specializing in backend systems and process automation.',
   icons: {
     icon: '/favicon.ico',
