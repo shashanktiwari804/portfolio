@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%; /* #0a0a0a */
+    --foreground: 0 0% 96.1%; /* #f5f5f5 */
+
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 96.1%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 96.1%;
+
+    --primary: 45 74% 52%; /* #d4af37 */
+    --primary-foreground: 0 0% 4%; /* #0a0a0a */
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 96.1%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 70%; /* #b3b3b3 */
+
+    --accent: 45 74% 52%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 45 74% 52%;
+    
+    --radius: 0.5rem;
+  }
+
+  /* Force dark theme for shadcn */
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96.1%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 96.1%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 96.1%;
+    --primary: 45 74% 52%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 96.1%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 45 74% 52%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 45 74% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .animated-background-hero {
+    background-color: hsl(var(--background));
+    background-image:
+      radial-gradient(circle at 10% 10%, hsl(var(--primary) / 0.05), transparent 40%),
+      radial-gradient(circle at 80% 90%, hsl(var(--primary) / 0.05), transparent 40%),
+      radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.03), transparent 30%);
+    background-size: 200% 200%;
+    animation: gradient-animation 20s ease-in-out infinite alternate;
+  }
+      
+  @keyframes gradient-animation {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+}
